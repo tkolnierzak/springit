@@ -1,21 +1,24 @@
 package pl.flutterdeveloper.springit.model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Link {
+@Data
+@NoArgsConstructor
+public class Vote {
 
     @Id
     @GeneratedValue
     private Long id;
-    private String title;
-    private String url;
+    @NonNull
+    private int votes;
 
-    //comments
-
-
-    public Link() {
-    }
+    //user
+    //link
 }
