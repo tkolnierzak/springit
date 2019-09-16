@@ -1,4 +1,4 @@
-package pl.flutterdeveloper.springit.model;
+package pl.flutterdeveloper.springit.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
