@@ -30,8 +30,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .and()
-                .csrf().disable()
-                .headers().frameOptions().disable();
+                .formLogin()
+                .loginPage("/login")
+                .permitAll()
+                .usernameParameter("email")
+                .and()
+                .logout()
+                .and()
+                .rememberMe();
     }
 
     @Override
