@@ -5,10 +5,7 @@ import org.hibernate.validator.constraints.URL;
 import org.ocpsoft.prettytime.PrettyTime;
 import pl.flutterdeveloper.springit.service.BeanUtil;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -43,6 +40,9 @@ public class Link extends Auditable {
 
     @OneToMany(mappedBy = "link")
     private List<Vote> votes = new ArrayList<>();
+
+    @ManyToOne
+    private User user;
 
     private int voteCount = 0;
 
